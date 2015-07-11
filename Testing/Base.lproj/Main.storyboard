@@ -1,25 +1,555 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sus-NL-OBi">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DragAndDrop-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="DragAndDrop" id="vXZ-lx-hvc" customClass="DragAndDropViewController" customModule="Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="bhp-lg-7wv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nt2-U3-Rtg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSB-J8-JM8">
+                                <rect key="frame" x="0.0" y="43" width="320" height="138"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DuckHeadWithArrows_rgb" translatesAutoresizingMaskIntoConstraints="NO" id="sHQ-zJ-A2X">
+                                <rect key="frame" x="31" y="145" width="258" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sHQ-zJ-A2X" secondAttribute="height" multiplier="129:116" id="5GW-TD-o1L"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-Na-E5B">
+                                <rect key="frame" x="72" y="336" width="72" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AWX-Ih-DNj" appends="YES" id="oJU-ZU-bGv"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="Label1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="WPl-VN-RY4">
+                                <rect key="frame" x="172" y="396" width="72" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="P0J-O5-H5q" appends="YES" id="gRe-Lx-cWu"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="Label3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-fy-UxQ">
+                                <rect key="frame" x="73" y="191" width="65" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cde-sU-9oy" appends="YES" id="j8n-JO-L1d"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PE-Ul-0mY">
+                                <rect key="frame" x="152" y="151" width="72" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ptT-mo-kOn" appends="YES" id="VNR-Ob-otc"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itf-qV-Dxc">
+                                <rect key="frame" x="136" y="518" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="W0O-OD-Sep"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzM-Wx-vCk">
+                                <rect key="frame" x="267" y="321" width="35" height="35"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="sHQ-zJ-A2X" secondAttribute="centerX" id="GJd-ER-XuA"/>
+                            <constraint firstAttribute="centerX" secondItem="itf-qV-Dxc" secondAttribute="centerX" id="IDb-nJ-zHY"/>
+                            <constraint firstItem="Nt2-U3-Rtg" firstAttribute="top" secondItem="itf-qV-Dxc" secondAttribute="bottom" constant="20" id="MYq-Ql-MSF"/>
+                            <constraint firstItem="sHQ-zJ-A2X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="dGh-Yq-NXO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sHQ-zJ-A2X" secondAttribute="trailing" constant="15" id="egB-EN-Qoa"/>
+                            <constraint firstItem="sHQ-zJ-A2X" firstAttribute="top" secondItem="bhp-lg-7wv" secondAttribute="bottom" constant="125" id="jKX-fe-5oc"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Hue-OL-zeO" appends="YES" id="BMp-4F-sQN"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="WPl-VN-RY4" id="Nhp-YP-0E4"/>
+                        <outlet property="label2" destination="Rtl-Na-E5B" id="3Ud-fN-fSJ"/>
+                        <outlet property="label3" destination="zwf-fy-UxQ" id="R9E-Sc-eMR"/>
+                        <outlet property="label4" destination="8PE-Ul-0mY" id="2v6-0e-NKy"/>
+                        <outlet property="pointsIndicator" destination="hzM-Wx-vCk" id="JGV-r5-rxO"/>
+                        <outlet property="questionImage" destination="sHQ-zJ-A2X" id="sPf-c1-p62"/>
+                        <outlet property="submitButton" destination="itf-qV-Dxc" id="lpO-jx-IHP"/>
+                        <outlet property="swipeToShuffle" destination="Hue-OL-zeO" id="dvK-TH-ZUG"/>
+                        <outlet property="textbox" destination="PSB-J8-JM8" id="pyu-1q-p2y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Hue-OL-zeO">
+                    <connections>
+                        <action selector="shuffleLabelsAfterSwipe:" destination="vXZ-lx-hvc" id="nwe-h3-rRE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="P0J-O5-H5q">
+                    <connections>
+                        <action selector="label3Drag:" destination="vXZ-lx-hvc" id="3Ln-8g-Lhq"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="AWX-Ih-DNj">
+                    <connections>
+                        <action selector="label3Drag:" destination="vXZ-lx-hvc" id="Nfo-4O-jDV"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cde-sU-9oy">
+                    <connections>
+                        <action selector="label3Drag:" destination="vXZ-lx-hvc" id="cZ9-Tp-b8Y"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ptT-mo-kOn">
+                    <connections>
+                        <action selector="label3Drag:" destination="vXZ-lx-hvc" id="qAi-kl-YTa"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-13" y="-18"/>
+        </scene>
+        <!--ImageToSelect4TextButtons-->
+        <scene sceneID="kjl-UQ-HjX">
+            <objects>
+                <viewController title="ImageToSelect4TextButtons" id="2GL-lQ-JS8" customClass="FuckingWorkAlreadyViewController" customModule="Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nIY-VJ-HdV"/>
+                        <viewControllerLayoutGuide type="bottom" id="yqs-Vz-6zn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kF4-Of-fMI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HxJ-gX-gRz">
+                                <rect key="frame" x="0.0" y="42" width="320" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-Wn-9D7">
+                                <rect key="frame" x="50" y="217" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Button1">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button1Pressed:" destination="2GL-lQ-JS8" eventType="touchUpInside" id="TN3-o9-3lp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnk-d4-hlS">
+                                <rect key="frame" x="50" y="292" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Button2">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button2Pressed:" destination="2GL-lQ-JS8" eventType="touchUpInside" id="UGr-R6-8DN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-iy-l2U">
+                                <rect key="frame" x="50" y="367" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Button3">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button3Pressed:" destination="2GL-lQ-JS8" eventType="touchUpInside" id="pKk-Bt-L0j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yd-XL-Bdm">
+                                <rect key="frame" x="50" y="442" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Button4">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button4Pressed:" destination="2GL-lQ-JS8" eventType="touchUpInside" id="1W5-pt-T5r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.78428248359999997" blue="0.16159539470000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="d9S-Wn-9D7" id="qD6-sW-ciH"/>
+                        <outlet property="button2" destination="Gnk-d4-hlS" id="fuv-LJ-bHR"/>
+                        <outlet property="button3" destination="FJ9-iy-l2U" id="Axx-Rh-buT"/>
+                        <outlet property="button4" destination="2yd-XL-Bdm" id="t5o-aB-WWZ"/>
+                        <outlet property="ohGod" destination="HxJ-gX-gRz" id="6n0-fL-jig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jzu-a9-79B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="-366"/>
+        </scene>
+        <!--Three Images Select View Controller-->
+        <scene sceneID="6sN-mY-szo">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Sus-NL-OBi" customClass="ThreeImagesSelectViewController" customModule="Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNZ-8c-Wft"/>
+                        <viewControllerLayoutGuide type="bottom" id="8O6-Gg-mcI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jje-Qr-D3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UV-3c-yDf">
+                                <rect key="frame" x="0.0" y="42" width="320" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="QTh-Ii-XET"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-Vw-8d7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whp-oh-OZd">
+                                <rect key="frame" x="64" y="182" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binocsv4_sm (1)" translatesAutoresizingMaskIntoConstraints="NO" id="gqb-EE-0ck">
+                                        <rect key="frame" x="2" y="7" width="46" height="22"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PPk-bp-zEP" appends="YES" id="fJ0-N9-Q1b"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r8V-Pd-9jT">
+                                <rect key="frame" x="207" y="182" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binocsv4_sm (1)" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-hd-jKS">
+                                        <rect key="frame" x="2" y="7" width="46" height="22"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sUz-Ns-ojy" appends="YES" id="a7u-EY-Bo1"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYd-hu-qMP">
+                                <rect key="frame" x="135" y="347" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binocsv4_sm (1)" translatesAutoresizingMaskIntoConstraints="NO" id="b8C-Te-yS1">
+                                        <rect key="frame" x="2" y="6" width="46" height="22"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NYQ-1j-KRB" appends="YES" id="Bhd-LP-ncQ"/>
+                                </connections>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-xa-91I">
+                                <rect key="frame" x="95" y="373" width="130" height="130"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jra-88-647" appends="YES" id="EWA-FG-L0v"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKa-g3-7Pr">
+                                <rect key="frame" x="167" y="209" width="130" height="130"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CSO-EG-lqI" appends="YES" id="9Um-Jg-NCN"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHD-zb-ayH">
+                                <rect key="frame" x="23" y="209" width="130" height="130"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aHD-zb-ayH" secondAttribute="height" multiplier="1:1" id="GCL-nf-cG5"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="plN-Ra-fcC" appends="YES" id="t7n-qr-nN9"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2S-pH-1D5">
+                                <rect key="frame" x="130" y="270" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeZoomClicked:" destination="Sus-NL-OBi" eventType="touchUpInside" id="z1a-gg-dBr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddy-Va-aPf">
+                                <rect key="frame" x="267" y="321" width="35" height="35"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.78428248359999997" blue="0.16159539470000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aHD-zb-ayH" firstAttribute="centerX" secondItem="whp-oh-OZd" secondAttribute="centerX" constant="-1" id="58C-3M-h6L"/>
+                            <constraint firstItem="aHD-zb-ayH" firstAttribute="top" secondItem="0UV-3c-yDf" secondAttribute="bottom" constant="37" id="5tn-if-iDx"/>
+                            <constraint firstItem="sKa-g3-7Pr" firstAttribute="width" secondItem="aHD-zb-ayH" secondAttribute="width" id="6mp-iX-5JI"/>
+                            <constraint firstItem="sKa-g3-7Pr" firstAttribute="top" secondItem="r8V-Pd-9jT" secondAttribute="bottom" constant="-23" id="Bp7-WT-40k"/>
+                            <constraint firstItem="eGF-xa-91I" firstAttribute="top" secondItem="sKa-g3-7Pr" secondAttribute="bottom" constant="34" id="Hew-RI-1OB"/>
+                            <constraint firstItem="sKa-g3-7Pr" firstAttribute="leading" secondItem="aHD-zb-ayH" secondAttribute="trailing" constant="14" id="JDc-KB-g8n"/>
+                            <constraint firstItem="sKa-g3-7Pr" firstAttribute="top" secondItem="0UV-3c-yDf" secondAttribute="bottom" constant="37" id="O9D-VD-w3Q"/>
+                            <constraint firstItem="0UV-3c-yDf" firstAttribute="leading" secondItem="jje-Qr-D3Z" secondAttribute="leading" id="RFr-J2-q0W"/>
+                            <constraint firstItem="YYd-hu-qMP" firstAttribute="centerX" secondItem="eGF-xa-91I" secondAttribute="centerX" id="Tqh-9T-X9Y"/>
+                            <constraint firstAttribute="trailing" secondItem="0UV-3c-yDf" secondAttribute="trailing" id="ZK7-ZI-8tE"/>
+                            <constraint firstItem="r8V-Pd-9jT" firstAttribute="centerX" secondItem="sKa-g3-7Pr" secondAttribute="centerX" id="dAQ-LP-AhR"/>
+                            <constraint firstItem="0UV-3c-yDf" firstAttribute="top" secondItem="dNZ-8c-Wft" secondAttribute="bottom" constant="22" id="gqH-Qb-ZFH"/>
+                            <constraint firstAttribute="trailing" secondItem="sKa-g3-7Pr" secondAttribute="trailing" constant="23" id="iBm-Yb-PHD"/>
+                            <constraint firstItem="aHD-zb-ayH" firstAttribute="leading" secondItem="jje-Qr-D3Z" secondAttribute="leading" constant="23" id="ku6-5K-MxF"/>
+                            <constraint firstAttribute="centerX" secondItem="eGF-xa-91I" secondAttribute="centerX" id="l0v-VG-fJn"/>
+                            <constraint firstItem="sKa-g3-7Pr" firstAttribute="width" secondItem="eGF-xa-91I" secondAttribute="width" id="mao-OA-74D"/>
+                            <constraint firstItem="eGF-xa-91I" firstAttribute="top" secondItem="YYd-hu-qMP" secondAttribute="bottom" constant="-24" id="ppY-52-Mhm"/>
+                            <constraint firstItem="aHD-zb-ayH" firstAttribute="top" secondItem="whp-oh-OZd" secondAttribute="bottom" constant="-23" id="rZS-XZ-4jb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="binocs1" destination="whp-oh-OZd" id="4x5-9x-92U"/>
+                        <outlet property="binocs2" destination="r8V-Pd-9jT" id="1Au-88-Auu"/>
+                        <outlet property="binocs3" destination="YYd-hu-qMP" id="nGG-1O-clV"/>
+                        <outlet property="closeZoom" destination="K2S-pH-1D5" id="6gD-4N-gho"/>
+                        <outlet property="hideScreen" destination="ut5-Vw-8d7" id="E1B-r7-m3f"/>
+                        <outlet property="image1" destination="aHD-zb-ayH" id="YW9-D1-Mzd"/>
+                        <outlet property="image2" destination="sKa-g3-7Pr" id="9MF-Nw-sbW"/>
+                        <outlet property="image3" destination="eGF-xa-91I" id="z1S-yy-A2O"/>
+                        <outlet property="pointsIndicator" destination="Ddy-Va-aPf" id="yJd-e6-lXL"/>
+                        <outlet property="textbox" destination="0UV-3c-yDf" id="Cxi-KF-h9e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nV6-YQ-Xo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PPk-bp-zEP">
+                    <connections>
+                        <action selector="binocs1Tapped:" destination="Sus-NL-OBi" id="Z0W-Vd-oJ7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sUz-Ns-ojy">
+                    <connections>
+                        <action selector="binocs2Tapped:" destination="Sus-NL-OBi" id="qyB-H3-lo7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NYQ-1j-KRB">
+                    <connections>
+                        <action selector="binocs3Tapped:" destination="Sus-NL-OBi" id="N9l-ch-vJc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="plN-Ra-fcC">
+                    <connections>
+                        <action selector="image1Tapped:" destination="Sus-NL-OBi" id="b5d-aS-F0d"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CSO-EG-lqI">
+                    <connections>
+                        <action selector="image2Tapped:" destination="Sus-NL-OBi" id="XIN-nw-HUm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Jra-88-647">
+                    <connections>
+                        <action selector="image3Tapped:" destination="Sus-NL-OBi" id="kvf-ww-Hju"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-385" y="334"/>
+        </scene>
+        <!--TwoImagesSelect-->
+        <scene sceneID="oWM-nv-exk">
+            <objects>
+                <viewController title="TwoImagesSelect" id="Jh8-Gq-v2C" customClass="TwoImagesSelectViewController" customModule="Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OsJ-pO-zGv"/>
+                        <viewControllerLayoutGuide type="bottom" id="iXU-Wd-uYi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VNc-xA-Xa6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbv-6F-y9U">
+                                <rect key="frame" x="0.0" y="43" width="320" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="kfP-Qh-rlF"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-1n-IqK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oeq-l6-Vue">
+                                <rect key="frame" x="50" y="204" width="220" height="140"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Oeq-l6-Vue" secondAttribute="height" multiplier="11:7" id="iMi-j9-f8A"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QAp-Gd-dqF" appends="YES" id="EnH-VF-JfZ"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sMg-Jk-l8Y">
+                                <rect key="frame" x="50" y="362" width="220" height="140"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sMg-Jk-l8Y" secondAttribute="height" multiplier="11:7" id="a1p-IX-etV"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aiR-x3-40s" appends="YES" id="MWJ-W2-PwU"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3X-G8-dgm">
+                                <rect key="frame" x="244" y="249" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binocsv4_sm (1)" translatesAutoresizingMaskIntoConstraints="NO" id="1iF-Mi-NB4">
+                                        <rect key="frame" x="2" y="14" width="46" height="22"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6Q2-ZL-yei" appends="YES" id="ntw-MU-sZK"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-ak-BCy">
+                                <rect key="frame" x="244" y="407" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binocsv4_sm (1)" translatesAutoresizingMaskIntoConstraints="NO" id="2t4-nm-q3D">
+                                        <rect key="frame" x="2" y="14" width="46" height="22"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ayG-6y-YNw" appends="YES" id="lq7-7M-gSf"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT6-Ff-Xbb">
+                                <rect key="frame" x="267" y="321" width="35" height="35"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcz-Gj-Aog">
+                                <rect key="frame" x="130" y="259" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeZoomClicked:" destination="Jh8-Gq-v2C" eventType="touchUpInside" id="Jd6-HU-eUE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-Ch-8Zu">
+                                <rect key="frame" x="130" y="407" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeZoom2Clicked:" destination="Jh8-Gq-v2C" eventType="touchUpInside" id="EOs-5A-WPy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.78428248359999997" blue="0.16159539470000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gbv-6F-y9U" firstAttribute="top" secondItem="OsJ-pO-zGv" secondAttribute="bottom" constant="23" id="Trx-fd-Qyx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="binocFrame" destination="g3X-G8-dgm" id="tMW-Zv-pPD"/>
+                        <outlet property="binocImageView" destination="1iF-Mi-NB4" id="oEe-b9-bAb"/>
+                        <outlet property="binocView2" destination="kAM-ak-BCy" id="wia-wP-rJq"/>
+                        <outlet property="closeZoom" destination="gcz-Gj-Aog" id="amC-A4-GOs"/>
+                        <outlet property="closeZoom2" destination="KNd-Ch-8Zu" id="IhM-Yf-ci6"/>
+                        <outlet property="hideScreen" destination="IlM-1n-IqK" id="XLc-3R-kr6"/>
+                        <outlet property="image1" destination="Oeq-l6-Vue" id="T2b-pc-CrM"/>
+                        <outlet property="image2" destination="sMg-Jk-l8Y" id="ECy-uE-TEe"/>
+                        <outlet property="pointsIndicator" destination="FT6-Ff-Xbb" id="hXa-ZK-xfq"/>
+                        <outlet property="tapBinocs1" destination="6Q2-ZL-yei" id="Vds-wS-OrV"/>
+                        <outlet property="tapBinocs2" destination="ayG-6y-YNw" id="M7l-qp-8vz"/>
+                        <outlet property="tapImage1" destination="QAp-Gd-dqF" id="bpD-nj-zz1"/>
+                        <outlet property="tapImage2" destination="aiR-x3-40s" id="aCu-sg-SDg"/>
+                        <outlet property="textbox" destination="Gbv-6F-y9U" id="chK-Sl-Gkv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HF-qa-E7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6Q2-ZL-yei">
+                    <connections>
+                        <action selector="binocsTopTapped:" destination="Jh8-Gq-v2C" id="ZjS-b9-iQG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ayG-6y-YNw">
+                    <connections>
+                        <action selector="binocsBottomTapped:" destination="Jh8-Gq-v2C" id="Obk-lm-jwx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="QAp-Gd-dqF">
+                    <connections>
+                        <action selector="image1Tapped:" destination="Jh8-Gq-v2C" id="OtJ-tT-JJ9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aiR-x3-40s">
+                    <connections>
+                        <action selector="tappedBottomImage:" destination="Jh8-Gq-v2C" id="iOU-yj-btU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-385" y="-366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DuckHeadWithArrows_rgb" width="268" height="232"/>
+        <image name="binocsv4_sm (1)" width="56" height="32"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
